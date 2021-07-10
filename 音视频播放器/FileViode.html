@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>视频播放器</title>
+		<link rel="stylesheet" href="Viode.css"/>
+        <script src="../jquery-3.6.0.min.js"></script>
+        <style>
+            .video-play-panel {
+                position:relative;
+                width: 800px;
+            }
+            
+        </style>
+        <link href="Viode.css" rel="stylesheet" type="text/css">
+    <a href="FileAudio.html"><button id="audio">切换到音乐播放器</button></a>
+    </head>
+    <body>
+        <div class="video-play-panel">
+            <video width="960"  height="650" id="video-element" controls="controls" >
+              <source src="" id="video_here" align="center" >
+            </video>
+        </div>
+        <input type="file" name="file[]" class="file_multi_video" accept="video/*">
+    </body>
+    <script>
+        player = document.getElementById('video-element');
+
+        // $.each($("#video-element"), function(){
+        //     console.log(this);
+        //     this.controls = false; 
+        // }); 
+        // player.controls = false;
+
+        $(document).on("change", ".file_multi_video", function(evt) {
+            var $source = $('#video_here');
+            $source[0].src = URL.createObjectURL(this.files[0]);
+            $source.parent()[0].load();
+        });
+		
+        // Updates a button's title, innerHTML and CSS class
+        function changeButtonType(btn, value) {
+            btn.title     = value;
+            btn.className = value;
+        }
+
+        document.addEventListener('contextmenu', event => event.preventDefault());
+    
+    </script>
+</html>

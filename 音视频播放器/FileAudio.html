@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>音乐播放器</title>
+  <link rel="stylesheet" href="style.css"/>
+	<a href="FileViode.html"><button id="viode">视频</button></a>
+</head>
+<body>
+<div class="view">
+  <div class="left-side">
+    <div class="control">
+      <div class="o-btns">
+		  	<a href="FileViode.html"><button id="viode">视频</button></a>
+        <button class="play-type">单曲循环</button>
+        <button class="add-music">本地歌曲</button>
+        <input type="file" class="music-file" accept="audio/mp3" multiple="true"/>
+		<button class="muti">静音</button>
+        
+      </div>
+    </div>
+
+    <div class="music-contain">
+      <ul class="music-list"></ul>
+    </div>
+  </div>
+
+  <div class="right-side">
+    <audio preload autopaly class="music-player" controls="controls"></audio>
+    <canvas id="cas" width="825" height="540"></canvas>
+  </div>
+</div>
+
+<script src="jquery-3.6.0.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
